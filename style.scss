@@ -1,0 +1,165 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@400;600&display=swap");
+
+$ffPoppins: "Poppins", sans-serif;
+$ffOpen: "Open Sans", sans-serif;
+
+$violetPrimary: hsl(257, 40%, 49%);
+$magentaSecondary: hsl(300, 69%, 71%);
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $ffOpen;
+  min-height: 100vh;
+  margin: 0;
+  display: flex;
+  background-color: $violetPrimary;
+  flex-direction: column;
+  position: relative;
+  background: $violetPrimary url("images/bg-mobile.svg");
+  background-position: top;
+  background-size: cover;
+  background-repeat: no-repeat;
+  > * {
+    width: 80%;
+    margin: auto;
+    margin-block: 1rem;
+  }
+
+  > nav {
+    > .logo {
+      display: block;
+      width: 45%;
+    }
+  }
+
+  > .container {
+    text-align: center;
+    > .img-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      > img {
+        width: 100%;
+        display: block;
+      }
+    }
+    > section {
+      color: white;
+      > h1 {
+        font-weight: 600;
+        margin-block: 0.7rem;
+      }
+      > p {
+        line-height: 2;
+      }
+      > .socials {
+        margin: 0;
+        margin-top: 3rem;
+        list-style: none;
+        display: flex;
+        padding: 0;
+        justify-content: center;
+        gap: 1.5rem;
+        > li > i {
+          cursor: pointer;
+          &:hover {
+            color: $magentaSecondary;
+          }
+        }
+      }
+      > button {
+        font-weight: 400;
+        box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.3);
+        font-family: inherit;
+        display: block;
+        width: 60%;
+        margin: auto;
+        padding: 0.7rem 1.5rem;
+        border-radius: 50px;
+        border: none;
+        color: $violetPrimary;
+        transition: background-color 250ms linear, color 250ms linear;
+        cursor: pointer;
+        &:hover {
+          color: white;
+          background-color: $magentaSecondary;
+        }
+      }
+    }
+  }
+  .attribution {
+    text-align: center;
+    color: white;
+    font-size: 14px;
+    display: inline-block;
+  }
+  .attribution a {
+    color: $magentaSecondary;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  body {
+    position: relative;
+    background: $violetPrimary url("images/bg-desktop.svg");
+    background-position: left;
+    background-repeat: no-repeat;
+    background-size: cover;
+    align-items: center;
+    justify-content: center;
+    gap: 4rem;
+    > * {
+      width: 90%;
+      margin: 0;
+    }
+    > nav {
+      > .logo {
+        max-width: 20%;
+      }
+    }
+    > .container {
+      display: flex;
+      text-align: left;
+      > .img-container {
+        width: 55%;
+        > img {
+          width: 100%;
+        }
+      }
+      > section {
+        width: 45%;
+        color: white;
+        text-align: start;
+        padding: 1rem 2rem;
+        display: flex;
+        flex-direction: column;
+        > h1 {
+          font-size: 2rem;
+        }
+        > .socials {
+          margin-top: auto;
+          align-self: flex-end;
+          > li > i {
+            cursor: pointer;
+            &:hover {
+              color: $magentaSecondary;
+            }
+          }
+        }
+        > button {
+          margin: 0;
+          width: 40%;
+        }
+      }
+    }
+    footer {
+      display: none;
+    }
+  }
+}
